@@ -16,7 +16,6 @@ int place(int pos) {
 void print_sol(int n) {
     int i,j;
     count++;
-    printf("\n\nSolution #%d:\n",count);
     for (i=1;i<=n;i++) {
         for (j=1;j<=n;j++) {
             if(a[i]==j)
