@@ -1,50 +1,50 @@
 include<stdio.h>
 int main()
 {
-     float weight[50],profit[50],ratio[50],Totalvalue,temp,capacity,amount;
+     float w[50],p[50],r[50],tv,temp,c,amount;
      int n,i,j;
      printf("Enter the number of items :");
      scanf("%d",&n);   
     for (i = 0; i < n; i++)
     {
-        printf("Enter Weight and Profit for item[%d] :\n",i);
-        scanf("%f %f", &weight[i], &profit[i]);
+        printf("Enter w and p for item[%d] :\n",i);
+        scanf("%f %f", &w[i], &p[i]);
     } 
-    printf("Enter the capacity of knapsack :\n");
-    scanf("%f",&capacity);
+    printf("Enter the c of knapsack :\n");
+    scanf("%f",&c);
      
      for(i=0;i<n;i++)
-         ratio[i]=profit[i]/weight[i];
+         r[i]=p[i]/w[i];
          
     for (i = 0; i < n; i++) 
       for (j = i + 1; j < n; j++) 
-         if (ratio[i] < ratio[j]) 
+         if (r[i] < r[j]) 
         {
-            temp = ratio[j];
-            ratio[j] = ratio[i];
-            ratio[i] = temp;
+            temp = r[j];
+            r[j] = r[i];
+            r[i] = temp;
  
-            temp = weight[j];
-            weight[j] = weight[i];
-            weight[i] = temp;
+            temp = w[j];
+            w[j] = w[i];
+            w[i] = temp;
  
-            temp = profit[j];
-            profit[j] = profit[i];
-            profit[i] = temp;
+            temp = p[j];
+            p[j] = p[i];
+            p[i] = temp;
          }
 
      for (i = 0; i < n; i++) 
      {
-      if (weight[i] > capacity)
+      if (w[i] > c)
           break;
        else 
       {
-          Totalvalue = Totalvalue + profit[i];
-          capacity = capacity - weight[i];
+          tv = tv + p[i];
+          c = c - w[i];
        }
      } 
        if (i < n)
-       Totalvalue = Totalvalue + (ratio[i]*capacity);
-     printf("\nThe maximum value is :%f\n",Totalvalue);     
+       tv = tv + (r[i]*c);
+     printf("\nThe maximum value is :%f\n",tv);     
      return 0;
 }
