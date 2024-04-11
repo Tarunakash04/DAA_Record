@@ -1,7 +1,7 @@
 include<stdio.h>
 int main()
 {
-     float w[50],p[50],r[50],tv,temp,c,amount;
+     float w[50],p[50],r[50],tv,temp,c,a;
      int n,i,j;
      printf("Enter the number of items :");
      scanf("%d",&n);   
