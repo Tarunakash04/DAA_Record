@@ -32,8 +32,7 @@ int main()
             profit[j] = profit[i];
             profit[i] = temp;
          }
-    
-     printf("Knapsack problems using Greedy Algorithm:\n");
+
      for (i = 0; i < n; i++) 
      {
       if (weight[i] > capacity)
